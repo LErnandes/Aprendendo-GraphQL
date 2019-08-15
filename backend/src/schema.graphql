@@ -1,0 +1,19 @@
+type User {
+    id: ID!
+    name: String!
+    email: String!,
+    age: Int
+}
+
+type Query {
+    users: [User!]!
+    user(id: ID!): User
+}
+# O Query só retorna dados
+# [User!]! - O ! de dentro é para retornar apenas do tipo User descrito encima
+# O ! de fora é para não retornar null
+
+type Mutation {
+    createUser(name: String!, email: String!, age: Int): User
+}
+# O Mutation altera dados
